@@ -24,7 +24,7 @@ function App() {
           Popcorn Time 
           <img src="https://img.icons8.com/cotton/64/000000/streaming-movies.png" alt='movie-icon'/>
         </h1>
-        
+        <input type="search" className="search-input" placeholder="Search..." />
       </header>
       <hr />
       <section>
