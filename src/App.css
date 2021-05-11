@@ -15,32 +15,34 @@ header {
   width: 90%;
   margin: 0 auto;
   vertical-align: middle;
-  font-size: large;
+  font-size: 2.5vw;
   cursor: pointer;
 }
 
 header img {
   vertical-align: middle;
   margin-left: 10px;
+  width: 3vw;
 }
 
 section {
   margin: 1rem auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 .movie {
   background-color: #129daf;
   padding-bottom: 0.5rem;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .movie div {
-  font-size: x-small;
   display: flex;
-  justify-content: space-between;
-  padding: 0 5px;
+  justify-content: flex-end;
+  padding: 5px 5px 2px 5px;
   font-size: x-small;
 }
 
@@ -51,6 +53,6 @@ section {
 
 .movie img:hover {
   cursor: pointer;
-  transform: scale(1.04);
+  transform: scale(1.05);
   transition: all 500ms;
 }
