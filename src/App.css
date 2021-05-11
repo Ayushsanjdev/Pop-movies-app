@@ -1,17 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Reggae One', sans-serif;
   font-weight: 600;
   background-color: #116874;
   color: #fff;
-  margin: 0;
 }
 
-h1 {
-  font-size: 5vw;
+header {
+  width: 90%;
+  margin: 0 auto;
+  vertical-align: middle;
+  font-size: large;
+  cursor: pointer;
+}
+
+header img {
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+section {
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+.movie {
+  background-color: #129daf;
+  padding-bottom: 0.5rem;
+}
+
+.movie div {
+  font-size: x-small;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+  font-size: x-small;
+}
+
+.movie img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.movie img:hover {
+  cursor: pointer;
+  transform: scale(1.04);
+  transition: all 500ms;
 }
