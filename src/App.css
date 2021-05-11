@@ -6,11 +6,10 @@
 
 body {
   font-family: sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   background-color: #0d4e57;
   color: #fff;
   max-width: 1440px;
-  overflow-x: hidden;
 }
 
 .App {
@@ -33,7 +32,7 @@ header img {
 }
 
 section {
-  margin: 1rem auto;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 3%;
@@ -52,12 +51,10 @@ section {
   display: flex;
   justify-content: space-between;
   padding: 2px 3px;
-  font-size: 1vw;
+  font-size: 1.2vw;
   text-align: center;
   border-bottom-left-radius: 1px;
   border-bottom-right-radius: 1px;
-  
-
 }
 
 .movie img {
@@ -74,14 +71,15 @@ section {
 .movie-overview {
   position: absolute;
   background-color: #0f8696;
-  padding: 1rem;
+  padding: 0.5rem;
   color: aliceblue;
-  bottom: 0px;
+  bottom: 0;
   left: 0;
   right: 0;
   max-height: 100%;
   overflow: auto;
-  transform: translateY(100%);
+  transform: translateY(102%);
+  font-size: 1.5vw;
   
 }
 
@@ -89,7 +87,6 @@ section {
   transform: translateY(0%);
   transition: all 500ms ease-in-out;
 }
-
 
 
 @media only screen and (max-width: 670px) {
