@@ -5,11 +5,14 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
   font-family: serif;
-  font-weight: 500;
+  font-weight: 700;
   background-color: #0d4e57;
   color: #fff;
   max-width: 1440px;
+  scroll-behavior: smooth;
 }
 
 .App {
@@ -18,22 +21,19 @@ body {
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   font-size: 1.3rem;
   font-family: 'Reggae One', sans-serif;
   cursor: pointer;
 }
 
 .search-input {
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: #148392;
   border: 1px solid #b6d2d6;
   color: #fff;
-  padding: 0.3rem;
-  width: 100px; 
-  margin-top: auto;
+  padding: 0.5rem 1rem;
+  width: 20vw;
+  font-size: x-small;
 }
 
 header img {
@@ -60,8 +60,8 @@ section {
 .movie div:nth-child(2) {
   display: flex;
   justify-content: space-between;
-  padding: 2px 3px;
-  font-size: 1.2vw;
+  padding: 0 3px;
+  font-size: small;
   text-align: center;
   border-bottom-left-radius: 1px;
   border-bottom-right-radius: 1px;
@@ -97,8 +97,26 @@ section {
   transition: all 500ms ease-in-out;
 }
 
+.color {
+  background-color: #0d4e57;
+  padding: 0.5rem;
+  font-size: xx-small;
+}
 
-@media only screen and (max-width: 670px) {
+.color.green {
+  color:rgb(0, 255, 0);
+}
+
+.color.orange {
+  color: orange;
+}
+
+.color.red {
+  color: red;
+}
+
+
+@media only screen and (max-width: 760px) {
   section {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -107,5 +125,8 @@ section {
   }
   header img {
     width: 30px;
+  }
+  .movie div:nth-child(2) {
+    font-size: 0.4rem;
   }
 }
