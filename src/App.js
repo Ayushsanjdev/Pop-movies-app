@@ -20,7 +20,7 @@ function App() {
       });
     }
   useEffect(() => {
-    getMoviesApi(MOVIES_API);
+    getMoviesApi(MOVIES_API)
   }, [])
 
   const handleOnSubmit = (e) => {
