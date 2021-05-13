@@ -55,6 +55,7 @@ section {
   box-shadow: 3px 3px 3px 5px rgba(0,0,0,0.1);
   position: relative;
   overflow: hidden;
+  object-fit: cover;
 }
 
 .movie div:nth-child(2) {
@@ -70,6 +71,7 @@ section {
 .movie img {
   max-width: 100%;
   border-radius: 5px;
+  object-fit: cover;
 }
 
 .movie img:hover {
