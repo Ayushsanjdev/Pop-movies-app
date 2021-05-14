@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Movie from './components/movie';
+// import TvShow from "./components/TvShow";
+
+// api_key=d52eaf3acfab66733baf520a2f96042a
 
 const MOVIES_API = "https://api.themoviedb.org/3/discover/movie?api_key=d52eaf3acfab66733baf520a2f96042a&language=en-US&sort_by=vote_count.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate";
 
 const SEARCH_API = "https://api.themoviedb.org/3/search/movie?api_key=d52eaf3acfab66733baf520a2f96042a&language=en-US&page=1&include_adult=false&query=";
 
+// const TV_API = "https://api.themoviedb.org/3/discover/tv?api_key=d52eaf3acfab66733baf520a2f96042a&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate";
+
+// const TV_SEARCH_API = "https://api.themoviedb.org/3/search/tv?api_key=d52eaf3acfab66733baf520a2f96042a&language=en-US&page=1&include_adult=false"
 
 function App() {
 
@@ -16,17 +22,20 @@ function App() {
       fetch(API)
       .then(response => response.json())
       .then(data => {
+        console.log(data);
         setMovies(data.results);
       });
     }
-  useEffect(() => {
-    getMoviesApi(MOVIES_API)
-  }, [])
+
+    useEffect(() => {
+      getMoviesApi(MOVIES_API)
+    }, [])
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
     if(searchTerm) {
-      getMoviesApi(SEARCH_API + searchTerm);setSearchTerm('');
+      getMoviesApi(SEARCH_API + searchTerm);
+      setSearchTerm('');
     }
   }
     
