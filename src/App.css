@@ -21,7 +21,7 @@ body {
 }
 
 header {
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-family: 'Reggae One', sans-serif;
   cursor: pointer;
 }
@@ -31,8 +31,8 @@ header {
   background-color: #148392;
   border: 1px solid #b6d2d6;
   color: #fff;
-  padding: 0.5rem 1rem;
-  width: 20vw;
+  padding: 0.3rem 1rem;
+  width: 25vw;
   font-size: x-small;
 }
 
@@ -42,14 +42,35 @@ header img {
   width: 50px;
 }
 
-/* button {
+.btn-div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
   font-family: sans-serif;
-  width: 100px;
-  padding: 0.5rem;
+  width: 150px;
+  padding: 1rem;
   margin-top: 0.8rem;
   margin-right: 10px;
   cursor: pointer;
-} */
+  background-color: #0f8696;
+  border: transparent;
+  border-radius: 5px;
+  font-size: medium;
+}
+
+button:hover{
+  background-color: #0d4e57;
+  color: #fff;
+}
+
+.modename-heading{
+  text-align: center;
+  background-color: #0d4e57;
+  padding: 1rem 0rem;
+  font-family: sans-serif;
+}
 
 section {
   margin: 0 auto;
@@ -64,6 +85,7 @@ section {
   box-shadow: 3px 3px 3px 5px rgba(0,0,0,0.1);
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
   object-fit: cover;
 }
 
@@ -139,6 +161,11 @@ section {
   }
   .movie div:nth-child(2) {
     font-size: 0.4rem;
+  }
+  button {
+    padding: 0.5rem;
+    width: fit-content;
+    font-size: small;
   }
 }
 

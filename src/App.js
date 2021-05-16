@@ -1,25 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Movie from './components/movie';
-// import TvShow from "./components/TvShow";
 
 // api_key=d52eaf3acfab66733baf520a2f96042a
 
-const MOVIES_API = "https://api.themoviedb.org/3/discover/movie?api_key=d52eaf3acfab66733baf520a2f96042a&language=en-US&sort_by=vote_count.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate";
-
-const SEARCH_API = "https://api.themoviedb.org/3/search/movie?api_key=d52eaf3acfab66733baf520a2f96042a&language=en-US&page=1&include_adult=false&query=";
-
-// const TV_API = "https://api.themoviedb.org/3/discover/tv?api_key=d52eaf3acfab66733baf520a2f96042a&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate";
-
-// const TV_SEARCH_API = "https://api.themoviedb.org/3/search/tv?api_key=d52eaf3acfab66733baf520a2f96042a&language=en-US&page=1&include_adult=false"
-
 function App() {
 
+  
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [mode, setMode] = useState('movie');
 
-  const getMoviesApi = (API) => {
-      fetch(API)
+  const MOVIES_API = `https://api.themoviedb.org/3/discover/${mode}?api_key=d52eaf3acfab66733baf520a2f96042a&language=en-US&sort_by=vote_count.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`;
+
+  const SEARCH_API = `https://api.themoviedb.org/3/search/${mode}?api_key=d52eaf3acfab66733baf520a2f96042a&language=en-US&page=1&include_adult=false&query=`;
+
+  
+
+  const getMoviesApi = (API, title) => {
+      fetch(API + title)
       .then(response => response.json())
       .then(data => {
         console.log(data);
@@ -29,7 +28,7 @@ function App() {
 
     useEffect(() => {
       getMoviesApi(MOVIES_API)
-    }, [])
+    }, [MOVIES_API])
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
@@ -47,19 +46,26 @@ function App() {
     <div className='App'>
       <header>
         <h1>
-          Popcorn Time 
+          Cinema Dekho.in
           <img src="https://img.icons8.com/cotton/64/000000/streaming-movies.png" alt='movie-icon'/>
         </h1>
-        <form onSubmit={handleOnSubmit}>
-          <input type="search" 
-          className="search-input" 
-          placeholder="Search more..."
-          value={searchTerm}
-          onChange={handleOnChange} />
-        </form>
+        
+        <div className='btn-div'>
+          <form onSubmit={handleOnSubmit}>
+            <input type="search" 
+            className="search-input" 
+            placeholder="Search..."
+            value={searchTerm}
+            onChange={handleOnChange} />
+          </form>
+          <button onClick={()=>setMode('movie')}>Movies</button>
+          <button onClick={()=>setMode('tv')}>Tv Shows</button>
+        </div>
       </header>
       <hr />
+      <h1 className="modename-heading">Showing {mode}-mode</h1>
       <section>
+        
         {movies && movies.length > 0 && movies.map((movie) => 
         <Movie key={movie.id} {...movie} />
         )}
